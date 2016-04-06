@@ -45,7 +45,7 @@ function CommandParser:parse(player, mob, input)
 	for i,v in ipairs(self.commands) do
 		if v:match(player, mob, input) then
 			if v:getKeyword() ~= "password" then
-				logCommand(player, input)
+				Game.logCommand(player, input)
 			end
 
 			v:parse(player, mob, input)
