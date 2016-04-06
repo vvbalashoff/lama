@@ -36,7 +36,7 @@ Nanny				= {}
 function Nanny.process(player, input)
 	if player:getState() == PlayerState.NAME then
 		local name = DatabaseManager.legalizeName(input)
-		if string.len(input) < 3 or string.len(input) > 12 then
+		if not name or string.len(name) < 3 or string.len(name) > 12 then
 			Nanny.messageNameLengthLimit(player)
 			Nanny.askForName(player)
 		else
