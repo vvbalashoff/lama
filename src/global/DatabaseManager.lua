@@ -238,7 +238,7 @@ end
 function DatabaseManager.loadCommands()
 	local directory = string.format("%s/%s", DatabaseManager.dataDirectory, DatabaseManager.cmdDirectory)
 	for i in lfs.dir(directory) do
-		if i ~= "." and i ~= ".." and i ~= "movement.lua" then
+		if i ~= "." and i ~= ".." and i ~= "Movement.lua" then
 			if string.match(i, ".+%.lua") then -- it's an lua file!
 				local command = dofile(directory .. "/" .. i)
 				Game.info("Loading command '" .. command:getKeyword() .. "'")
