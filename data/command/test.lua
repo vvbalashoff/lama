@@ -31,7 +31,9 @@ function Test:parse(player, mob, input)
 	local cmd, _ = string.getWord(input)
 	local a, _ = string.getWord(_)
 	local b, _ = string.getWord(_)
-	self:execute(player, mob, a, b)
+	if a and b then
+		self:execute(player, mob, a, b)
+	end
 end
 
 function Test:execute(player, mob, a, b)
